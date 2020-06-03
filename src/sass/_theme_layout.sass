@@ -51,7 +51,6 @@ html
     white-space: pre-wrap
     height: auto
     min-height: $base-font-size * 2
-    line-height: $base-font-size * 1.5
 
   ul
     margin-bottom: 0
@@ -78,15 +77,15 @@ html
       padding-right: 0
       color: #FF3737
     // Expand links
-    // span.toctree-expand
-    //   display: block
-    //   float: left
-    //   margin-left: -1.2em
-    //   @extend .fa
-    //   @extend .fa-plus-square-o
-    //   font-size: .8em
-    //   line-height: 1.6em
-    //   color: darken($menu-link-medium, 20%)
+    span.toctree-expand
+      display: block
+      float: left
+      margin-left: -1.2em
+      @extend .fa
+      @extend .fa-plus-square-o
+      font-size: .8em
+      line-height: 1.6em
+      color: darken($menu-link-medium, 20%)
 
   // On state for the first level
   li.on a, li.current > a
@@ -101,13 +100,13 @@ html
       background: transparent
       span.toctree-expand
         color: $menu-link-medium
-    // span.toctree-expand
-    //   @extend .fa
-    //   @extend .fa-minus-square-o
-    //   display: block
-    //   font-size: .8em
-    //   line-height: 1.6em
-    //   color: darken($menu-link-medium, 30%)
+    span.toctree-expand
+      @extend .fa
+      @extend .fa-minus-square-o
+      display: block
+      font-size: .8em
+      line-height: 1.6em
+      color: darken($menu-link-medium, 30%)
 
   li.toctree-l1.current > a
     // border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
@@ -134,18 +133,6 @@ html
     display: block
 
   @for $toc_level from 1 through 10
-    .toctree-l#{$toc_level} > ul
-      position: relative
-      &:before
-        content: " "
-        display: block
-        position: absolute
-        top: ($gutter / 4) + .2
-        bottom: ($gutter / 4) + .2
-        left: if($toc_level > 1, $gutter * ($toc_level), $gutter)
-        width: 1px
-        background-color: #d3d3d3
-
     .toctree-l#{$toc_level}.current .toctree-l#{$toc_level + 1}
       @extend %hide_show_toctree_ul
     @if $toc_level > 1
@@ -361,7 +348,7 @@ html
 .wy-nav-content
   padding: $gutter $gutter * 2
   height: 100%
-  max-width: 100%
+  max-width: $nav-content-width
   margin: auto
 
 .wy-body-mask
@@ -445,8 +432,6 @@ footer
       overflow: hidden
 
 @media screen and (min-width: $nav-media-query)
-  .wy-nav-content-wrap
-    background: rgba(0,0,0,.05)
   .wy-nav-content
     margin: 0
     background: $section-background-color
