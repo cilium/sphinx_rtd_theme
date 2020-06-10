@@ -401,7 +401,7 @@ footer
 .genindextable li > ul
   margin-left: $base-line-height
 
-  +media($tablet)
++media($tablet)
   .wy-body-for-nav
     background: $section-background-color
   .wy-nav-top
@@ -468,6 +468,7 @@ footer
     display: flex
     align-items: center
     height: 70px
+    min-width: 119px
 
     img
       display: block
@@ -490,8 +491,15 @@ footer
   a
     color: $text-color
     font-weight: 600
+    display: inline-block
+    padding: 7px 15px
 
-    +media($tablet)
+
+@media screen and (max-width: 920px)
+  .wy-main-nav li + li
+    margin-left: 0
+    
+@media screen and (max-width: 790px)
   .wy-header
     position: relative
     flex-direction: column
@@ -561,6 +569,3 @@ footer
       text-align: center
       padding: $gutter 0
 
-.wy-main-nav a
-  display: inline-block
-  padding: 7px 15px
