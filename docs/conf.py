@@ -26,8 +26,8 @@ from sphinx.locale import _
 
 project = u'Cilium Docs'
 slug = re.sub(r'\W+', '-', project.lower())
-version = '0.5.0rc2'
-release = '0.5.0rc2'
+version = '0.6.0'
+release = '0.6.0'
 author = u'Dave Snider, Read the Docs, Inc. & contributors'
 copyright = author
 language = 'en'
