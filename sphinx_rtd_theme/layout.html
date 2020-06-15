@@ -106,11 +106,6 @@
   {%- endif %}
   {%- endblock %}
   {%- block extrahead %} {% endblock %}
-
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css"
-/>
 </head>
 
 <body class="wy-body-for-nav">
@@ -269,12 +264,11 @@
 
   {%- block footer %} {% endblock %}
 
-  <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js"></script>
   <script>
     docsearch({
-      apiKey: '12dfe504d662cfb7ee33e2574a1e3718',
-      indexName: 'CILIUM_DOCS',
-      appId: 'VS32FF5CNK', 
+      indexName: 'CILIUM_DOCS', // TODO: fix this
+      apiKey: '4e9b6e188b87deb43926a7c10d0f4d44',
+      appId: 'QWB13UU32F', 
       inputSelector: '#rtd-search-form input, #flyout-search-form input',
       debug: false,
     });
