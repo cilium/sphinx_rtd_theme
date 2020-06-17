@@ -271,6 +271,9 @@
       appId: 'QWB13UU32F', 
       inputSelector: '#rtd-search-form input, #flyout-search-form input',
       debug: false,
+      algoliaOptions: {
+        'facetFilters': ['version:' + '{{ release|e }}']
+      }
     });
   </script>
 
