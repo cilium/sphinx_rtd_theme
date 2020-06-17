@@ -272,7 +272,7 @@
       inputSelector: '#rtd-search-form input, #flyout-search-form input',
       debug: false,
       algoliaOptions: {
-        'facetFilters': ['version:' + '{{ release|e }}']
+        'facetFilters': ['version:{{ current_version }}']
       }
     });
   </script>
