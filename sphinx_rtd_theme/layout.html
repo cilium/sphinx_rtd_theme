@@ -36,6 +36,9 @@
   <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {%- endfor %}
 
+  {# DOCSEARCH STYLES #}
+  <link rel="stylesheet" href="{{ pathto('_static/css/docsearch.min.css', 1) }}" type="text/css" />
+
   {# FAVICON #}
   {% if favicon %}
   <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
@@ -264,6 +267,7 @@
 
   {%- block footer %} {% endblock %}
 
+  <script type="text/javascript" src="{{ pathto('_static/js/docsearch.min.js', 1) }}"></script>
   <script>
     docsearch({
       indexName: 'cilium_docs',
