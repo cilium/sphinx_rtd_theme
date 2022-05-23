@@ -1,74 +1,41 @@
-**************************
-Read the Docs Sphinx Theme
-**************************
+*********************************
+Cilium Documentation Sphinx Theme
+*********************************
 
-.. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
-   :target: https://pypi.python.org/pypi/sphinx_rtd_theme
-   :alt: Pypi Version
-.. image:: https://circleci.com/gh/readthedocs/sphinx_rtd_theme.svg?style=svg
-   :alt: Build Status
-   :target: https://circleci.com/gh/readthedocs/sphinx_rtd_theme
-.. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
-   :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
-   :alt: License
-.. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
-  :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
-  :alt: Documentation Status
+About
+=====
 
-This Sphinx_ theme was designed to provide a great reader experience for
-documentation users on both desktop and mobile devices. This theme is used
-primarily on `Read the Docs`_ but can work with any Sphinx project. You can find
-a working demo of the theme in the `theme documentation`_
+This is a fork from the `Read the Docs Sphinx Theme
+<https://github.com/readthedocs/sphinx_rtd_theme>`__.
 
-.. _Sphinx: http://www.sphinx-doc.org
-.. _Read the Docs: http://www.readthedocs.org
-.. _theme documentation: https://sphinx-rtd-theme.readthedocs.io/en/stable/
+This theme is used as a dependency for building Cilium's Documentation. The
+build system references it in `Cilium's Documentation/requirements.txt
+<https://github.com/cilium/cilium/blob/master/Documentation/requirements.txt>`__,
+generated from
+`Cilium's Documentation/requirements-min/requirements.txt
+<https://github.com/cilium/cilium/blob/main/Documentation/requirements-min/requirements.txt>`__.
 
-Installation
-============
+These files reference the commit and branch from the current repository that
+are used for building Cilium's documentation.
 
-This theme is distributed on PyPI_ and can be installed with ``pip``:
+The ``master`` branch in this repository is unused, other than for displaying
+the current ``README.rst``.
 
-.. code:: console
+Development
+===========
 
-   $ pip install sphinx-rtd-theme
+To update the theme:
 
-To use the theme in your Sphinx project, you will need to edit
-your ``conf.py`` file's ``html_theme`` setting:
+1. Clone this repository
+2. Implement your changes on top of the current branch in use
+3. Commit and push the changes to your own repository
+4. Reference your repository and branch in ``Documentation/requirements.txt``
+   in Cilium
+5. `Build the documentation locally
+   <https://docs.cilium.io/en/latest/contributing/testing/documentation/#testing-documentation>`__
+   or create a PR in Cilium to get the preview from the CI
 
-.. code:: python
-
-    html_theme = "sphinx_rtd_theme"
-
-.. admonition:: See also:
-
-    `Supported browsers`_
-        Officially supported and tested browser/operating system combinations
-
-    `Supported dependencies`_
-        Supported versions of Python, Sphinx, and other dependencies.
-
-    `Example documentation`_
-        A full example of this theme output, with localized strings enabled.
-
-.. _PyPI: https://pypi.python.org/pypi/sphinx_rtd_theme
-.. _Supported browsers: https://sphinx-rtd-theme.readthedocs.io/en/stable/development.html#supported-browsers
-.. _Supported dependencies: https://sphinx-rtd-theme.readthedocs.io/en/stable/development.html#supported-dependencies
-.. _Example documentation:  https://sphinx-rtd-theme.readthedocs.io/en/stable/
-
-Configuration
-=============
-
-This theme is highly customizable on both the page level and on a global level.
-To see all the possible configuration options, read the documentation on
-`configuring the theme`_.
-
-.. _configuring the theme: https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html
-
-Contributing
-============
-
-If you would like to help modify or translate the theme, you'll find more
-information on contributing in our `contributing guide`_.
-
-.. _contributing guide: https://sphinx-rtd-theme.readthedocs.io/en/stable/contributing.html
+Once your changes are ready, you can create a PR in the current repo (and if
+the version of this theme gets updated, create the equivalent PR in Cilium to
+update ``Documentation/requirements-min/requirements.txt`` and regenerate
+``Documentation/requirements.txt``).
