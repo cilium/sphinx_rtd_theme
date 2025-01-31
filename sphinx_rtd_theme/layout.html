@@ -16,6 +16,7 @@
 <!DOCTYPE html>
 <html class="{{ sphinx_writer }}" lang="{{ lang_attr }}"{% if sphinx_version_info >= (7, 2) %} data-content_root="{{ content_root }}"{% endif %}>
 <head>
+  <meta name="readthedocs-addons-api-version" content="1" />
   <meta charset="utf-8" />
   {{- metatags }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -321,8 +322,40 @@
       </div>
     </section>
   </div>
-  {% include "versions.html" -%}
-
+ 
+  <script>
+    document.addEventListener(
+      "readthedocs-addons-data-ready",
+      function (event) {
+        const config = event.detail.data();
+    
+        // Create the version selector HTML
+        const versionSelector = `
+          <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+            <span class="rst-current-version" data-toggle="rst-current-version">
+              <span class="rst-current-version-label">Read the Docs</span>
+              version: ${config.versions.current.slug}
+              <span class="fa fa-caret-down"></span>
+            </span>
+            <div class="rst-other-versions">
+              <dl>
+                <dt>Versions</dt>
+                ${config.versions.active
+                  .map(version => `
+                    <dd><a href="${version.urls.documentation}">${version.slug}</a></dd>
+                  `).join('')}
+              </dl>
+            </div>
+          </div>
+        `;
+    
+        // Insert the version selector into your page
+        document.querySelector('.wy-nav-wrapper')
+          .insertAdjacentHTML('beforeend', versionSelector);
+      }
+    );
+  </script>
+  
   <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable({{ 'true' if theme_sticky_navigation|tobool else 'false' }});
