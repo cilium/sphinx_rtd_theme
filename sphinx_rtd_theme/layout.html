@@ -40,6 +40,7 @@
 
   {# DOCSEARCH STYLES #}
   <link rel="stylesheet" href="{{ pathto('_static/css/docsearch.min.css', 1) }}" type="text/css" />
+  <link rel="stylesheet" href="{{ pathto('_static/css/docsearch-input.css', 1) }}" type="text/css" />
 
   {#- FAVICON
       favicon_url is the only context var necessary since Sphinx 4.
@@ -330,7 +331,7 @@
       </div>
     </section>
   </div>
- 
+  
   <script>
     document.addEventListener(
       "readthedocs-addons-data-ready",
@@ -393,14 +394,14 @@
   <script>
     setTimeout(() => {
       docsearch({
-        indexName: 'cilium_docs',
+        appId: 'NR0TQZZ2NG',
         apiKey: 'ebd279472edfb5246bababfd1f324a98',
-        appId: 'NR0TQZZ2NG', 
-        inputSelector: '#rtd-search-form input, #flyout-search-form input',
-        debug: false,
-        algoliaOptions: {
-          'facetFilters': ['version:{{ current_version }}']
-        }
+        indexName: 'cilium_docs',
+        container: '#rtd-search-form',
+        searchParameters: {
+          facetFilters: ['version:{{ current_version }}']
+        },
+        disableUserPersonalization: true,
       });
     }, 0);
   </script>
