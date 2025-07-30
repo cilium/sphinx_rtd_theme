@@ -1,0 +1,8 @@
+.wy-side-nav-search {
+  padding: 1rem;
+}
+
+#rtd-search-form button {
+  width: 100%;
+  box-sizing: border-box;
+}
