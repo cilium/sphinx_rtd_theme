@@ -41,4 +41,5 @@ const switchTheme = () => {
     });
   }
   
+  switchPygments(localStorage.getItem('theme'));
 };

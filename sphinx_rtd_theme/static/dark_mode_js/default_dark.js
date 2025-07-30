@@ -14,6 +14,7 @@ const loadTheme = () => {
     document.body.setAttribute('data-theme', 'dark');
   }
   
+  switchPygments(localStorage.getItem('theme') || 'dark');
 };
 
 loadTheme();
