@@ -91,6 +91,9 @@
       {%- endfor %}
     {%- endif %}
     <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+    <!-- CSS: For Dark mode -->
+    <link rel="stylesheet" href="{{ pathto('_static/dark_mode_css/dark.css', 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/dark_mode_css/general.css', 1) }}" type="text/css" />
 
     <link rel="stylesheet" href="{{ pathto('_static/css/github-button.css', 1) }}" type="text/css" />
     <script type="text/javascript" src="{{ pathto('_static/js/github-button.js', 1) }}"></script>
@@ -134,6 +137,11 @@
 </head>
 
 <body class="wy-body-for-nav">
+  <!-- JS: For Dark mode -->
+  <!-- Default Light Theme -->
+  <script type="text/javascript" src="{{ pathto('_static/dark_mode_js/default_light.js', 1) }}"></script>
+  <script type="text/javascript" src="{{ pathto('_static/dark_mode_js/theme_switcher.js', 1) }}"></script>
+
   <header class="wy-header">
       <div class="wy-header-left">
           {# the logo helper function was removed in Sphinx 6 and deprecated since Sphinx 4 #}

@@ -11,6 +11,7 @@ from sphinx import version_info as sphinx_version
 from sphinx.locale import _
 from sphinx.util.logging import getLogger
 
+from sphinx_rtd_theme.dark_mode_loader import DarkModeLoader
 
 __version__ = '2.0.0rc3'
 __version_full__ = __version__
@@ -35,7 +36,6 @@ def config_initiated(app, config):
 def extend_html_context(app, pagename, templatename, context, doctree):
      # Add ``sphinx_version_info`` tuple for use in Jinja templates
      context['sphinx_version_info'] = sphinx_version
-
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
@@ -66,8 +66,11 @@ def setup(app):
     # See http://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.add_message_catalog
     rtd_locale_path = path.join(path.abspath(path.dirname(__file__)), 'locale')
     app.add_message_catalog('sphinx', rtd_locale_path)
+    # Connect the original theme configuration
     app.connect('config-inited', config_initiated)
-
+    # Connect the dark mode loader
+    app.connect("config-inited", DarkModeLoader().configure)
+    
     # sphinx emits the permalink icon for headers, so choose one more in keeping with our theme
     app.config.html_permalinks_icon = "\uf0c1"
 
