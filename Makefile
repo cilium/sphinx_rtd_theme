@@ -2,7 +2,7 @@ SHELL := /bin/bash
 CWD := $(shell cd -P -- '$(shell dirname -- "$0")' && pwd -P)
 
 docker-images:
-	docker-compose build
+	docker compose build
 
 docker-npm-build:
 	rm -f .container_id
@@ -14,6 +14,6 @@ docker-npm-build:
 	@echo "Done building"
 
 docker-npm-dev:
-	docker-compose run sphinx_rtd_theme dev
+	docker compose run sphinx_rtd_theme dev
 
 docker-build-all: docker-images docker-npm-build
