@@ -40,10 +40,6 @@
     {{ css_tag(cssfile) }}
   {%- endfor -%}
 
-  {# DOCSEARCH STYLES #}
-  <link rel="stylesheet" href="{{ pathto('_static/css/docsearch.min.css', 1) }}" type="text/css" />
-  <link rel="stylesheet" href="{{ pathto('_static/css/docsearch-input.css', 1) }}" type="text/css" />
-
   {#- FAVICON
       favicon_url is the only context var necessary since Sphinx 4.
       In Sphinx<4, we use favicon but need to prepend path info.
@@ -101,7 +97,6 @@
 
     <link rel="stylesheet" href="{{ pathto('_static/css/github-button.css', 1) }}" type="text/css" />
     <script type="text/javascript" src="{{ pathto('_static/js/github-button.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/docsearch.min.js', 1) }}"></script>
 
     {#- OPENSEARCH #}
     {%- if use_opensearch %}
@@ -394,21 +389,6 @@
   {%- endif %}
 
   {%- block footer %} {% endblock %}
-
-  <script>
-    setTimeout(() => {
-      docsearch({
-        appId: 'NR0TQZZ2NG',
-        apiKey: 'ebd279472edfb5246bababfd1f324a98',
-        indexName: 'cilium_docs',
-        container: '#rtd-search-form',
-        searchParameters: {
-          facetFilters: ['version:{{ current_version }}']
-        },
-        disableUserPersonalization: true,
-      });
-    }, 0);
-  </script>
 
 </body>
 </html>
