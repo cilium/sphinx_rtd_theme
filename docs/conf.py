@@ -47,8 +47,6 @@ else:
     tags.add("python3")
 
 html_static_path = ['_static/']
-html_css_files = ['css/docsearch.min.css']
-html_js_files = ['js/docsearch.min.js']
 
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
