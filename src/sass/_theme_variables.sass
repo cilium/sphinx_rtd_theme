@@ -1,11 +1,6 @@
 // In here are variables used for sphinx_rtd_theme, they either add to or overwrite the default ones
 // that are set in wyrm_core/wy_variables.sass. You'll find wyrm in bower_components if you're looking
 // for a reference.
-$white:                               #ffffff
-$text-color:                          #000000
-$text-light:                          #868686
-$nav-desktop-width:                   320px
-$section-background-color:            $white
 
 $fa-font-path:                        "~font-awesome/fonts"
 $static-img:                          "../img/"
@@ -35,9 +30,7 @@ $menuselection-color:                 $blue
 $footer-color:                        $text-medium
 
 // Menu colors
-$menu-background-color:              $white
 $menu-vertical-background-color:      $section-background-color
-$menu-top-link-color: red
 
 // Menu text colors
 $menu-color:                          $gray
@@ -47,21 +40,21 @@ $menu-light:                          lighten($menu-color,45%) !default
 $menu-lighter:                        lighten($menu-color,60%) !default
 
 // Menu link colors
-$menu-link-color:                     $text-light
-$menu-link-dark:                      $text-color
-$menu-link-medium:                    $text-light
-$menu-link-light:                     $text-light
-$menu-link-active:                    $black
+$menu-link-color:                     $text-color
+$menu-link-dark:                      $text-dark
+$menu-link-medium:                    $text-medium
+$menu-link-light:                     $text-lighter
+$menu-link-active:                    $white
 
 // Navigation colors
 $nav-background-color:                $menu-background-color
-$nav-search-background-color:         $white
+$nav-search-background-color:         $blue
 $nav-search-color:                    $section-background-color
 $nav-link-color:                      $blue
 $nav-link-color-visited:              $purple
 $nav-link-color-hover:                lighten($nav-link-color, 6%) !default
 $nav-link-color-alt:                  hsl(33, 100%, 51%)
-$nav-caption:                         $text-color
+$nav-caption:                         lighten($blue, 15%)
 
 // Sidebar colors
 $sidebar-background-color:            $table-stripe-color
@@ -71,8 +64,8 @@ $sidebar-title-background-color:      $table-border-color
 // Sphinx highlight color
 $highlight-color:                     $yellow
 
-$base-font-family:                    "Inter", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
-$custom-font-family:                  "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
+$base-font-family:                    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
+$custom-font-family:                  "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
 $custom-font-family2:                 Georgia, serif
 $code-font-family:                    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace
 
