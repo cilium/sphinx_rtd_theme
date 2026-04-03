@@ -565,12 +565,7 @@
 
 .rst-versions .rst-current-version .rst-current-version-label {
   float: left;
-  color: #000;
   font-weight: 600;
-}
-
-.rst-versions .rst-current-version span {
-  color: #000;
 }
 
 .rst-versions .rst-other-versions {
