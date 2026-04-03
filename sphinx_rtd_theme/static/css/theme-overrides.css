@@ -568,6 +568,10 @@
   font-weight: 600;
 }
 
+.rst-versions .rst-current-version span {
+  color: #000;
+}
+
 .rst-versions .rst-other-versions {
   padding: 0 16px 16px;
 }

@@ -173,6 +173,10 @@ html[data-theme="dark"] .rst-versions .rst-other-versions dd a {
   color: var(--dark-text-color);
 }
 
+html[data-theme="dark"] .rst-versions .rst-current-version span {
+  color: var(--dark-text-color);
+}
+
 html[data-theme="dark"] .wy-side-nav-search .wy-dropdown > a,
 html[data-theme="dark"] .wy-side-nav-search > a {
   color: #ddd;
