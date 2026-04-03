@@ -156,8 +156,8 @@
   width: 320px;
   padding: 1.625rem 2.5rem 0.625rem;
   margin-bottom: 0.625rem;
-  background-color: #fff;
-  color: #000;
+  /*background-color: #fff;*/
+  /*color: #000;*/
   text-align: center;
 }
 
@@ -165,7 +165,7 @@
   width: 95%;
   margin-bottom: 24px;
   padding: 6px;
-  background-color: transparent;
+  background-color: unset
 }
 
 .wy-side-nav-search input[type="text"],
