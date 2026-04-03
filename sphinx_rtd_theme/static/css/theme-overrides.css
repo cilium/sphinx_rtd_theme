@@ -545,7 +545,7 @@
 
 .rst-versions .rst-current-version {
   padding: 16px;
-  background-color: transparent;
+  background-color: unset;
 }
 
 .rst-versions .rst-current-version .fa {
