@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+.wy-body-for-nav {
+  font-family: "Inter", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+}
+
 .wy-menu {
   padding: 0 1.25rem;
 }
