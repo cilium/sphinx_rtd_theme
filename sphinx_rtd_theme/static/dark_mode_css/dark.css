@@ -163,7 +163,8 @@ html[data-theme="dark"]
 
 html[data-theme="dark"] .wy-side-nav-search,
 html[data-theme="dark"] .rst-versions,
-html[data-theme="dark"] .rst-current-version {
+html[data-theme="dark"] .rst-current-version-label,
+html[data-theme="dark"] .rst-other-versions {
   background-color: #0b152d;
   color: var(--dark-text-color);
 }
