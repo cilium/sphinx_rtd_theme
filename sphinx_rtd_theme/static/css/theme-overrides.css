@@ -15,7 +15,8 @@
 .wy-menu-vertical header,
 .wy-menu-vertical p.caption {
   color: #000;
-  margin: 12px 0 0;
+  padding: 0 1.25rem;
+  margin: 6px 0;
   font-family: "SF Pro Display", "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
   font-size: 89%;
 }
@@ -27,6 +28,10 @@
 }
 
 .wy-menu-vertical a {
+  display: block;
+  position: relative;
+  line-height: 18px;
+  padding: 0.3125rem 1.25rem;
   font-size: 100%;
   font-family: "SF Pro Display", "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
   font-weight: 400;
@@ -42,6 +47,7 @@
 }
 
 .wy-menu-vertical li.current a {
+  padding: 0.3125rem 1.875rem;
   border-right: none;
   color: #868686 !important;
 }
@@ -60,6 +66,7 @@
 
 .wy-menu-vertical li.on a,
 .wy-menu-vertical li.current > a {
+  padding: 0.3125rem 1.25rem;
   color: #000 !important;
 }
 
@@ -79,8 +86,7 @@
 }
 
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
-  padding: 0.3125rem 3.75rem;
-  padding-right: 1.25rem;
+  padding: 0.3125rem 1.25rem 0.3125rem 3.75rem;
 }
 
 .wy-menu-vertical li.toctree-l3 a {
@@ -88,8 +94,7 @@
 }
 
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
-  padding: 0.3125rem 5rem;
-  padding-right: 1.25rem;
+  padding: 0.3125rem 1.25rem 0.3125rem 5rem;
 }
 
 .wy-menu-vertical li.toctree-l4 a {
@@ -97,8 +102,7 @@
 }
 
 .wy-menu-vertical li.toctree-l4.current li.toctree-l5 > a {
-  padding: 0.3125rem 6.25rem;
-  padding-right: 1.25rem;
+  padding: 0.3125rem 1.25rem 0.3125rem 6.25rem;
 }
 
 .wy-menu-vertical li.toctree-l5 a {
@@ -106,8 +110,7 @@
 }
 
 .wy-menu-vertical li.toctree-l5.current li.toctree-l6 > a {
-  padding: 0.3125rem 7.5rem;
-  padding-right: 1.25rem;
+  padding: 0.3125rem 1.25rem 0.3125rem 7.5rem;
 }
 
 .wy-menu-vertical li.toctree-l6 a {
@@ -115,8 +118,7 @@
 }
 
 .wy-menu-vertical li.toctree-l6.current li.toctree-l7 > a {
-  padding: 0.3125rem 8.75rem;
-  padding-right: 1.25rem;
+  padding: 0.3125rem 1.25rem 0.3125rem 8.75rem;
 }
 
 .wy-menu-vertical li.toctree-l7 a {
@@ -124,8 +126,7 @@
 }
 
 .wy-menu-vertical li.toctree-l7.current li.toctree-l8 > a {
-  padding: 0.3125rem 10rem;
-  padding-right: 1.25rem;
+  padding: 0.3125rem 1.25rem 0.3125rem 10rem;
 }
 
 .wy-menu-vertical li.toctree-l8 a {
@@ -133,8 +134,7 @@
 }
 
 .wy-menu-vertical li.toctree-l8.current li.toctree-l9 > a {
-  padding: 0.3125rem 11.25rem;
-  padding-right: 1.25rem;
+  padding: 0.3125rem 1.25rem 0.3125rem 11.25rem;
 }
 
 .wy-menu-vertical li.toctree-l9 a {
@@ -142,12 +142,15 @@
 }
 
 .wy-menu-vertical li.toctree-l9.current li.toctree-l10 > a {
-  padding: 0.3125rem 12.5rem;
-  padding-right: 1.25rem;
+  padding: 0.3125rem 1.25rem 0.3125rem 12.5rem;
 }
 
 .wy-menu-vertical li.toctree-l10 a {
   padding: 0.41667rem 12.5rem;
+}
+
+.wy-menu-vertical li.toctree-l10.current li.toctree-l11 > a {
+  padding: 0.3125rem 1.25rem 0.3125rem 13.75rem;
 }
 
 .wy-side-nav-search,
