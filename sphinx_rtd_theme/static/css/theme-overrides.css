@@ -504,7 +504,7 @@
   left: 0;
   z-index: 400;
   width: 320px;
-  background: transparent;
+  background: #fafafa;
   color: #000;
   font-family: "SF Pro Display", "Inter", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 }
@@ -513,7 +513,7 @@
   width: 100%;
   max-width: 260px;
   padding: 0 0 10.90909px;
-  background: transparent;
+  background: #fafafa;
 }
 
 .rst-versions .injected .rst-versions {
