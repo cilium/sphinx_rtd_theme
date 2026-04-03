@@ -1,6 +1,3 @@
-$gutter: 1.25rem
-$menu-link-font-family: "SF Pro Display", "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
-
 // Set uniform (but not relative) base font size
 html
   font-size: $base-font-size
@@ -10,7 +7,6 @@ html
   top: $gutter
 
 .wy-menu
-  padding: 0 $gutter
   a:hover
     text-decoration: none
 
@@ -19,7 +15,7 @@ html
   ul, li
     display: inline-block
   li:hover
-    background: transparent
+    background: rgba(255, 255, 255, 0.1)
   li
     &.divide-left
       border-left: solid 1px hsl(0, 0%, 25%)
@@ -39,43 +35,34 @@ html
     height: $base-font-size * 2
     line-height: $base-font-size * 2
     padding: 0 $gutter
-    margin: ($base-line-height / 4) 0
+    margin: ($base-line-height / 2) 0 0 0
     display: block
     font-weight: bold
-    font-family: $menu-link-font-family
     text-transform: uppercase
-    font-size: 89%
+    font-size: 85%
     white-space: nowrap
-
-  p.caption
-    white-space: pre-wrap
-    height: auto
-    min-height: $base-font-size * 2
 
   ul
     margin-bottom: 0
-  a
-    font-weight: 400
   li
     &.divide-top
       border-top: solid 1px hsl(0, 0%, 25%)
     &.divide-bottom
       border-bottom: solid 1px hsl(0, 0%, 25%)
     &.current
-      // background: darken($menu-vertical-background-color, 10%)
+      background: darken($menu-vertical-background-color, 10%)
       a
         color: $menu-link-medium
-        // border-right: solid 1px darken($menu-vertical-background-color, 20%)
+        border-right: solid 1px darken($menu-vertical-background-color, 20%)
         padding: ($gutter / 4) ($gutter * 1.5)
         &:hover
-          background: transparent
+          background: darken($menu-vertical-background-color, 15%)
     code
       border: none
       background: inherit
       color: inherit
       padding-left: 0
       padding-right: 0
-      color: #FF3737
     // Expand links
     button.toctree-expand
       display: block
@@ -91,15 +78,15 @@ html
 
   // On state for the first level
   li.on a, li.current > a
-    color: $menu-link-dark
+    color: $menu-link-color
     padding: ($gutter / 4) $gutter
     font-weight: bold
     position: relative
-    background: transparent
+    background: $menu-vertical-background-color
     border: none
     padding-left: $gutter -4px
     &:hover
-      background: transparent
+      background: $menu-vertical-background-color
       button.toctree-expand
         color: $menu-link-medium
     button.toctree-expand
@@ -110,8 +97,8 @@ html
       color: darken($menu-link-medium, 30%)
 
   li.toctree-l1.current > a
-    // border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
-    // border-top: solid 1px darken($menu-vertical-background-color, 20%)
+    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
+    border-top: solid 1px darken($menu-vertical-background-color, 20%)
 
   // This is the on state for pages beyond second level
 
@@ -140,12 +127,14 @@ html
     @if $toc_level > 1
       li.toctree-l#{$toc_level}
         a
-          // @extend %toctree_link_color
-          padding: $gutter / 3 ($gutter) * ($toc_level)
+          @extend %toctree_link_color
         &.current
+          > a
+            padding: ($gutter / 4) ($gutter * ($toc_level - 1 + 0.5))
+
           li.toctree-l#{$toc_level + 1}  > a
             @extend %display_current_toctree_element
-            padding: ($gutter / 4) ($gutter * ($toc_level + 1))
+            padding: ($gutter / 4) ($gutter * ($toc_level + 0.5))
             padding-right: $gutter
         a:hover button.toctree-expand
           @extend %toctree_hover_link_color
@@ -156,17 +145,17 @@ html
   li.toctree-l2
     &.current
       > a
-        // background: darken($menu-vertical-background-color, 20%)
+        background: darken($menu-vertical-background-color, 20%)
       li.toctree-l3 > a
-        // background: darken($menu-vertical-background-color, 20%)
+        background: darken($menu-vertical-background-color, 20%)
     button.toctree-expand
       color: darken($menu-vertical-background-color, 35%)
   li.toctree-l3
     &.current
       > a
-        // background: darken($menu-vertical-background-color, 25%)
+        background: darken($menu-vertical-background-color, 25%)
       li.toctree-l4 > a
-        // background: darken($menu-vertical-background-color, 25%)
+        background: darken($menu-vertical-background-color, 25%)
     button.toctree-expand
       color: darken($menu-vertical-background-color, 40%)
 
@@ -184,8 +173,7 @@ html
     padding: ($gutter / 4) $gutter
     display: block
     position: relative
-    font-size: 100%
-    font-family: $menu-link-font-family
+    font-size: 90%
     color: $menu-link-light
     &:hover
       background-color: lighten($menu-background-color, 10%)
@@ -193,37 +181,26 @@ html
       button.toctree-expand
         color: $menu-link-light
     &:active
-      // background-color: $menu-logo-color
+      background-color: $menu-logo-color
       cursor: pointer
-      // color: $menu-link-active
+      color: $menu-link-active
       button.toctree-expand
-        // color: $menu-link-active
+        color: $menu-link-active
 
-.wy-side-nav-search,
-#flyout-search-form
+.wy-side-nav-search
   display: block
   width: $nav-desktop-width
-  padding: $gutter * 1.3 $gutter * 2 $gutter / 2
+  padding: $gutter / 2
   margin-bottom: $gutter / 2
   z-index: $z-index-popover
   background-color: $nav-search-background-color
   text-align: center
   color: $nav-search-color
-
-  &.bottom
-    width: 95%
-    padding: 6px
-    background-color: transparent
-    margin-bottom: 24px
-
   input[type=text]
-    display: block
     width: 100%
-    font-size: 1rem
-    border-radius: 4px
-    padding: 7.5px 12px
-    border-color: #d3d3d3
-    box-shadow: none
+    border-radius: 50px
+    padding: 6px 12px
+    border-color: darken($link-color, 5%)
   img
     display: block
     margin: auto auto ($gutter / 2) auto
@@ -241,7 +218,7 @@ html
     margin-bottom: $gutter / 2
     max-width: 100%
     &:hover
-      background: transparent
+      background: rgba(255, 255, 255, 0.1)
     img.logo
       display: block  // display on its own line all the time
       margin: 0 auto
@@ -257,7 +234,7 @@ html
     margin-top: -1 * $gutter / 4
     margin-bottom: $gutter / 2
     font-weight: normal
-    color: $text-color
+    color: rgba(255, 255, 255, 0.3)
 
 .wy-nav .wy-menu-vertical
   header
@@ -265,7 +242,7 @@ html
   a
     color: $text-light
     &:hover
-      background-color: transparent
+      background-color: $link-color
       color: $white
 
 [data-menu-wrap]
@@ -293,25 +270,21 @@ html
 .wy-grid-for-nav
   position: absolute
   width: 100%
-  top: 76px
-  bottom: 0
-
-.wy-nav-wrapper
-  display: flex
-  flex-direction: column
-  width: $nav-desktop-width
-  background: $nav-background-color
-  z-index: $z-index-popover
-  position: fixed
-  top: 76px
-  bottom: 0
-  left: 0
+  height: 100%
 
 .wy-nav-side
-  padding-bottom: 3.2em
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  padding-bottom: 2em
+  width: $nav-desktop-width
   overflow-x: hidden
   overflow-y: hidden
+  min-height: 100%
   color: $menu-medium
+  background: $nav-background-color
+  z-index: $z-index-popover
 
 .wy-side-scroll
   width: $nav-desktop-width + 20px
@@ -322,8 +295,8 @@ html
 
 .wy-nav-top
   display: none
-  background: transparent
-  color: $text-color
+  background: $link-color
+  color: $white
   padding: ($gutter / 4) ($gutter / 2)
   position: relative
   line-height: 50px
@@ -331,7 +304,7 @@ html
   font-size: 100%
   +clearfix
   a
-    color: $text-color
+    color: $white
     font-weight: bold
   img
     margin-right: $base-line-height / 2
@@ -342,7 +315,6 @@ html
     border-radius: 100%
   i
     font-size: 30px
-    color: #C4C4C4
     float: left
     cursor: pointer
     padding-top: inherit
@@ -407,23 +379,12 @@ footer
 .genindextable li > ul
   margin-left: $base-line-height
 
-#rtd-search-form
-  text-align: left
-
 +media($tablet)
-  #rtd-search-form
-    display: flex
-    .algolia-autocomplete
-      width: 100%
-      .ds-dropdown-menu
-        min-width: 100%
-        max-width: 100%
-
   .wy-body-for-nav
     background: $section-background-color
   .wy-nav-top
     display: block
-  .wy-nav-wrapper
+  .wy-nav-side
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
     @else
@@ -445,169 +406,19 @@ footer
       position: fixed
       min-width: 100%
       left: 85%
-      top: 76px
+      top: 0
       height: 100%
       overflow: hidden
 
 @media screen and (min-width: $nav-media-query)
+  .wy-nav-content-wrap
+    background: rgba(0, 0, 0, 0.05)
   .wy-nav-content
     margin: 0
     background: $section-background-color
 
 @media print
-  .rst-versions, footer, .wy-nav-wrapper
+  .rst-versions, footer, .wy-nav-side
     display: none
   .wy-nav-content-wrap
     margin-left: 0
-
-.wy-header
-  display: flex
-  align-items: center
-  justify-content: space-between
-  padding: 18px 26px 17px
-  border-bottom: 1px solid #e9e9e9
-  position: fixed
-  background-color: $white
-  z-index: 201
-  top: 0
-  right: 0
-  left: 0
-
-  .wy-header-left
-    display: inline-block
-    > *
-      display: inline-block
-
-  .wy-github-stars
-    position: relative
-    +media($mobile)
-
-  @media (max-width: 1169px)
-    .wy-github-stars
-      display: none
-
-  .wy-header-logo-wrapper
-    min-width: 119px
-
-    img
-      display: block
-      width: auto
-      height: 35px
-
-.wy-main-nav
-  .wy-main-nav-checkbox
-    display: none
-
-  .wy-main-nav-toggle
-    display: none
-
-  ul
-    display: flex
-    align-items: center
-
-  a
-    color: #000
-    font-size: 16px
-    font-weight: 600
-    display: inline-block
-    padding: 0
-    margin-left: 40px
-
-    &.callToAction
-      padding: 7px 15px
-      background: #0a53a5
-      border-radius: 2px
-      font-weight: 600
-      font-size: 16px
-      color: #fff
-      border: 0
-      cursor: pointer
-
-      svg
-        display: inline-block
-        width: 14px
-        height: 14px
-        margin-right: 5px
-        position: relative
-        top: 1px
-
-*:target::before
-  content: ""
-  display: block
-  height: 71px
-  margin: -71px 0 0
-
-@media screen and (max-width: 920px)
-  .wy-main-nav li + li
-    margin-left: 0
-
-@media screen and (max-width: 900px)
-  .wy-header
-    flex-direction: column
-    align-items: stretch
-
-  .wy-main-nav
-    .wy-main-nav-menu
-      display: none
-      padding: 0
-      border-bottom: 1px solid #E9E9E9
-      position: absolute
-      top: 67px
-      z-index: 100
-      background: #fff
-      width: 100%
-      left: 0
-      padding-bottom: 17px
-
-    .wy-main-nav-toggle
-      display: block
-      position: absolute
-      right: 0
-      top: 0
-      font-size: 14px
-      font-weight: 600
-      color: #919191
-      height: 70px
-      line-height: 70px
-      padding: 0 26px
-
-      &::before
-        content: " "
-        display: none
-
-    .wy-main-nav-checkbox:checked + .wy-main-nav-toggle
-      width: 70px
-      font-size: 0
-      color: transparent
-
-      &::before
-        display: block
-        width: 13px
-        height: 13px
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTS40OS40OWExLjUgMS41IDAgMDAwIDIuMTJMNC4zNzcgNi41LjQ5IDEwLjM5YTEuNSAxLjUgMCAxMDIuMTIxIDIuMTJMNi41IDguNjIxbDMuODg5IDMuODlhMS41IDEuNSAwIDAwMi4xMjEtMi4xMjJMOC42MiA2LjVsMy44OS0zLjg5QTEuNSAxLjUgMCAwMDEwLjM4OS40OWwtMy44OSAzLjg4OUwyLjYxLjQ4OWExLjUgMS41IDAgMDAtMi4xMiAweiIgZmlsbD0iIzkwOTA5MCIvPjwvc3ZnPg==")
-        background-size: cover
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate3d(-50%, -50%, 0)
-
-    .wy-main-nav-checkbox:checked + label + .wy-main-nav-menu
-      display: block
-
-    li
-      text-align: center
-      margin: 0 0 12px
-
-    a
-      display: inline-block
-      text-align: center
-      padding: 0
-      margin: 0
-
-// possible fix for table border bug? hard to test whether it's a bug or a feature :/
-// seems to do the trick, haven't noticed any visual regressions with tables 
-.rst-content table.docutils td:first-child
-  border-left-width: 1px
-
-  *:target::before
-    display: none

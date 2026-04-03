@@ -161,8 +161,20 @@ html[data-theme="dark"]
   background-color: #18181a;
 }
 
-html[data-theme="dark"] .wy-side-nav-search {
+html[data-theme="dark"] .wy-side-nav-search,
+html[data-theme="dark"] .rst-versions,
+html[data-theme="dark"] .rst-current-version-label,
+html[data-theme="dark"] .rst-other-versions {
   background-color: #0b152d;
+  color: var(--dark-text-color);
+}
+
+html[data-theme="dark"] .rst-versions .rst-other-versions dd a {
+  color: var(--dark-text-color);
+}
+
+html[data-theme="dark"] .rst-versions .rst-current-version span {
+  color: var(--dark-text-color);
 }
 
 html[data-theme="dark"] .wy-side-nav-search .wy-dropdown > a,
