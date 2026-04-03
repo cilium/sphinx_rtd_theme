@@ -30,6 +30,7 @@
   font-size: 100%;
   font-family: "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
   font-weight: 400;
+  color: #868686 !important;
 }
 
 .wy-menu-vertical li code {
@@ -42,6 +43,7 @@
 
 .wy-menu-vertical li.current a {
   border-right: none;
+  color: #868686 !important;
 }
 
 .wy-menu-vertical li.current a:hover,
@@ -53,12 +55,18 @@
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
 .wy-menu-vertical li.toctree-l3.current > a,
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
-  background: transparent;
+  background: #f7f7f7 !important;
 }
 
 .wy-menu-vertical li.on a,
 .wy-menu-vertical li.current > a {
-  color: #000;
+  color: #000 !important;
+}
+
+.wy-menu-vertical a:hover,
+.wy-nav .wy-menu-vertical a:hover a:active {
+  color: #868686 !important;
+  background: #f7f7f7 !important;
 }
 
 .wy-menu-vertical li.toctree-l1.current > a {
@@ -178,10 +186,6 @@
 
 .wy-side-nav-search > div.version {
   color: #000;
-}
-
-.wy-nav .wy-menu-vertical a:hover {
-  background-color: transparent;
 }
 
 .wy-grid-for-nav {

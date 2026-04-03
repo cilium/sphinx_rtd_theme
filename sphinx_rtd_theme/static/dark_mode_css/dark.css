@@ -161,8 +161,9 @@ html[data-theme="dark"]
   background-color: #18181a;
 }
 
-html[data-theme="dark"] .wy-side-nav-search {
+html[data-theme="dark"] .wy-side-nav-search .rst-versions .rst-current-version {
   background-color: #0b152d;
+  color: var(--dark-text-color);
 }
 
 html[data-theme="dark"] .wy-side-nav-search .wy-dropdown > a,
