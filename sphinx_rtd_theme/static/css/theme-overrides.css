@@ -16,7 +16,7 @@
 .wy-menu-vertical p.caption {
   color: #000;
   margin: 12px 0 0;
-  font-family: "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+  font-family: "SF Pro Display", "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
   font-size: 89%;
 }
 
@@ -28,7 +28,7 @@
 
 .wy-menu-vertical a {
   font-size: 100%;
-  font-family: "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+  font-family: "SF Pro Display", "Inter", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
   font-weight: 400;
   color: #868686 !important;
 }
@@ -503,7 +503,7 @@
   width: 320px;
   background: #f7f7f7;
   color: #000;
-  font-family: "Inter", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+  font-family: "SF Pro Display", "Inter", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 }
 
 .rst-versions #flyout-search-form {
