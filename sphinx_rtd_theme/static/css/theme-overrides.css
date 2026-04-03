@@ -156,7 +156,7 @@
   width: 320px;
   padding: 1.625rem 2.5rem 0.625rem;
   margin-bottom: 0.625rem;
-  /*background-color: #fff;*/
+  background-color: transparent;
   /*color: #000;*/
   text-align: center;
 }
@@ -501,7 +501,7 @@
   left: 0;
   z-index: 400;
   width: 320px;
-  background: #f7f7f7;
+  background: transparent;
   color: #000;
   font-family: "SF Pro Display", "Inter", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 }
