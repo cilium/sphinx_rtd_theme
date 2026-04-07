@@ -4,16 +4,144 @@ Changelog
 
 .. seealso:: :ref:`howto_upgrade`
 
-.. |theme_version| replace:: 2.0.0rc3
+.. |theme_version| replace:: 3.1.0
 
-.. _release-2.0.0:
+.. _release-3.1.0:
 
-2.0.0rc2
+3.1.0
+=====
+
+* Added support for docutils 0.22
+* Added support for Sphinx 9.x
+
+.. _release-3.1.0rc2:
+
+3.1.0rc2
+========
+
+* Added support for docutils 0.22
+
+.. _release-3.1.0rc1:
+
+3.1.0rc1
+========
+
+* Added support for Sphinx 9.x
+
+.. _release-3.0.2:
+
+3.0.2
+=====
+
+* Show current translation when the flyout is attached
+* Fix JavaScript issue that didn't allow users to disable selectors
+
+.. _release-3.0.1:
+
+3.0.1
+=====
+
+* Use black color for text in selectors.
+
+.. _release-3.0.0:
+
+3.0.0
+=====
+
+Final version.
+
+.. _release-3.0.0rc4:
+
+3.0.0rc4
+========
+
+Fixes
+-----
+
+* Trigger "Read the Docs Search addon" when focusing the "Search docs" input in the navbar.
+
+.. _release-3.0.0rc3:
+
+3.0.0rc3
+========
+
+Fixes
+-----
+
+* Show hidden version in selector if it's the current active version
+
+.. _release-3.0.0rc2:
+
+3.0.0rc2
 ========
 
 Added
 -----
 
+* Render version and language selectors below the documentation's title (top left).
+  This can be controlled via the new theme options ``version_selector`` and ``language_selector``.
+
+.. _release-3.0.0rc1:
+
+3.0.0rc1
+========
+
+Added
+-----
+
+* Added support for Sphinx 8.
+* Added support for Python 3.12.
+* Added support for docutils ``>0.18, <0.22``.
+* Populate ``html_context`` with all the environment variables starting with ``READTHEDOCS_``.
+
+Deprecations
+------------
+
+* Drop support for Sphinx ``<6.0``.
+* Drop support for Python ``<3.8``.
+* ``analytics_id`` and ``analytics_anonymize_ip`` are deprecated, use sphinxcontrib-googleanalytics_ instead.
+* Drop support for all versions of Internet Explorer.
+* Raise a warning when defining ``html_theme_path``. This was an old config that's not required anymore.
+* ``extra_css_files`` is deprecated and support will be removed in a future version.
+
+.. _sphinxcontrib-googleanalytics: https://pypi.org/project/sphinxcontrib-googleanalytics/
+
+.. _release-2.1.0rc2:
+
+2.1.0rc2
+========
+
+Added
+-----
+
+* Added ``flyout_display`` option to display the flyout
+  ``attached`` (bottom of the sidebard) or ``hidden`` (default).
+
+.. _release-2.1.0rc1:
+
+2.1.0rc1
+========
+
+Added
+-----
+
+* Render the menu versions/languages selector (flyout)
+  using the new ``readthedocs-addons-data-ready`` Read the Docs Addons ``CustomEvent``.
+
+Deprecations
+------------
+
+* Remove ``html5shiv``.
+
+.. _release-2.0.0:
+
+2.0.0
+=====
+
+Added
+-----
+
+* Support for Sphinx versions ``6.x`` and ``7.x``
 * Support for docutils ``<=0.20``
 
 Deprecations

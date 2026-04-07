@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from sphinx.locale import _
+from sphinx_rtd_theme import __version_full__ as theme_version_full
+from sphinx_rtd_theme import __version__ as theme_version
 import sys
 import os
 import re
@@ -9,9 +12,6 @@ import re
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('./demo/'))
 
-from sphinx_rtd_theme import __version__ as theme_version
-from sphinx_rtd_theme import __version_full__ as theme_version_full
-from sphinx.locale import _
 
 project = u'Cilium Docs'
 slug = re.sub(r'\W+', '-', project.lower())
@@ -46,8 +46,6 @@ if sys.version_info < (3, 0):
 else:
     tags.add("python3")
 
-html_static_path = ['_static/']
-
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
     'rtd-dev': ('https://dev.readthedocs.io/en/stable/', None),
@@ -61,14 +59,10 @@ html_theme_options = {
 }
 html_context = {}
 
-if not 'READTHEDOCS' in os.environ:
-    html_js_files.append('debug.js')
-
-    # Add fake versions for local QA of the menu
-    html_context['test_versions'] = list(map(
-        lambda x: str(x / 10),
-        range(1, 100)
-    ))
+if 'READTHEDOCS' not in os.environ:
+    html_static_path = ['_static/']
+    html_js_files = ['debug.js']
+    html_context["DEBUG"] = True
 
 html_logo = "demo/static/cilium-logo.svg"
 html_show_sourcelink = True
@@ -78,7 +72,7 @@ htmlhelp_basename = slug
 
 
 latex_documents = [
-  ('index', '{0}.tex'.format(slug), project, author, 'manual'),
+    ('index', '{0}.tex'.format(slug), project, author, 'manual'),
 ]
 
 man_pages = [
@@ -86,7 +80,7 @@ man_pages = [
 ]
 
 texinfo_documents = [
-  ('index', slug, project, author, slug, project, 'Miscellaneous'),
+    ('index', slug, project, author, slug, project, 'Miscellaneous'),
 ]
 
 
