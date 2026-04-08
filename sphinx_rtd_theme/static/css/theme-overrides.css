@@ -607,3 +607,7 @@ body.wy-body-for-nav {
     width: 85%;
   }
 }
+
+.wy-main-nav {
+    padding-bottom: 0 !important;
+}
